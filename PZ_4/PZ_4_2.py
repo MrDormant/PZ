@@ -15,4 +15,3 @@ if 0<pr<50:
         k += 1
     print("количество дней",k)
 else:print("Ошибка")
-C:\Users\Core\Desktop\Прочее_РАБОЧЕЕ\clone\reports
