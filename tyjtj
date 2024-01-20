@@ -1,0 +1,9 @@
+text = str('груши 45 991 63 100 12 морковь 13 47 26 0 16')
+sp = text.split()
+print(sp)
+el = {}
+for i in range(0,len(sp),6):
+    produkt = sp[i]
+    produkt_kg =list(map(int,sp[i+1:i+6]))
+    el=dict( produkt= produkt_kg)
+    print(el)
