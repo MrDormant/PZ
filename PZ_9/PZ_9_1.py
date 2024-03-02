@@ -10,5 +10,5 @@ sp = {}
 for i in range(0,len(s),6):
     sp[s[i]] = list(map(int, s[i+1:i+6]))
 print(sp)
-for f in sp :
+for f in sp:
    print('самые маленикие продажи продукта ',f,':',min(sp[f]))
