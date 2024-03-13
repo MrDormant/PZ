@@ -1,8 +1,10 @@
 #В матрице элементы последнего столбца заменить на -1.
 
-import numpy as np
-N = int(input("Введите число N: "))
-matrix = np.random.randint(1, 10, size=(N, N))
-print(matrix)
-matrix[:, -1] = -1
-print(matrix)
+import random
+from random import randint
+
+n = int(input("введите размерность табльцы  "))
+num = [[random.randint(1, 10) for _ in range(n)] for _ in range(n)]
+print("начальная табл ", num)
+num = [y[:-1] + [-1] for y in num]
+print(num)
