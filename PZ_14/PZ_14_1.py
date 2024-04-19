@@ -1,6 +1,14 @@
-import random
-n = 3
-# Создание списка из нескольких списков с рандомными числами
-nested_list = [[random.randint(1, 100) for _ in range(n)] for _ in range(n)]
+#В исходном текстовом файле(Dostoevsky.txt) найти все годы деятельности писателя
+#(например, 1821 года, 1837 год, 1843 году и так далее по всему тексту). Посчитать
+#количество полученных элементов.
 
-print(nested_list)
+import re
+
+with open('Dostoevsky.txt', 'r', encoding='utf-8') as f:
+    data = f.read()
+
+
+print('найти все годы деятельности писателя')
+a = re.findall(r'(?:[0-9]{4}–)?[0-9]{4}\s?(?:год.?|г?.\.)', data)
+print(a)
+print("количество полученных элементов :",len(a))
