@@ -1,0 +1,20 @@
+"""<Экземпляр класса> = <Название класса> ([<Параметры>]) При """
+
+
+class DeepRock():
+    def move(self):
+        print('машина едет ')
+
+    def stop(self):
+        print('машина стала ')
+
+
+my_car = DeepRock()
+my_car1 = DeepRock()
+# my_car.move()
+# my_car.stop()
+
+#print(my_car == my_car1)
+#print(id(my_car), id(my_car1))
+#print(dir(my_car))
+#print(my_car.__dict__)
