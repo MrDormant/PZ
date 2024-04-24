@@ -1,15 +1,24 @@
 class Note:
-    def __init__(self, text):
-        self.text = text
+    def __init__(self, b):
+        self.text = b
         self.count = 0
 
     def upcount(self):
         self.count += 1
 
+
 note1 = Note("Задача 1")
 note2 = Note("Задача 2")
 note3 = Note("Задача 3")
 
-print(note1.text)
-print(note2.text)
-print(note3.text)
+# print(note1.text)
+# print(note1.__dict__)
+# print(note2.text)
+# print(note2.__dict__)
+
+
+print(dir(note1))
+# print(note2.__sizeof__)
+note1.upcount()
+print(note1.upcount)
+print(Note.upcount)
