@@ -1,0 +1,15 @@
+import random
+class Matrix :
+    def __init__(self, rows, cols):
+        self.rows = rows
+        self.cols = cols
+        self.data = [[random.randint(1,10) for _ in range(cols)] for _ in range(rows)]
+
+    def snum(self,a,b):
+        self.snum([[]])
+        
+        
+a = Matrix(2,3)
+print(a.data)
+b = Matrix(2,3)
+print(b.data)
