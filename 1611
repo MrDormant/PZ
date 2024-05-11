@@ -1,0 +1,42 @@
+"""Создайте класс «Матрица», который имеет атрибуты количества строк и столбцов.
+Добавьте методы для сложения, вычитания и умножения матриц."""
+
+import random
+
+
+class Matrix:
+    def __init__(self, rows, cols):
+        self.rows = rows
+        self.cols = cols
+        self.data = [[random.randint(1, 10) for _ in range(cols)] for _ in range(rows)]
+
+    def summm(self, other):
+        result = Matrix(self.rows, self.cols)
+        for i in range(self.rows):
+            for j in range(self.cols):
+                result.data[i][j] = self.data[i][j] + other.data[i][j]
+        return result
+
+    def minus(self, other):
+        result = Matrix(self.rows, self.cols)
+        for i in range(self.rows):
+            for j in range(self.cols):
+                result.data[i][j] = self.data[i][j] - other.data[i][j]
+        return result
+    def umn(self, other):
+        result = Matrix(self.rows, self.cols)
+        for i in range(self.rows):
+            for j in range(self.cols):
+                result.data[i][j] = self.data[i][j] * other.data[i][j]
+        return result
+
+
+a = Matrix(2, 3)
+print(a.data)
+b = Matrix(2, 3)
+
+print(b.data)
+
+print('сложение матириц : ', a.summm(b).data)
+print('вычитание матириц : ', a.minus(b).data)
+print('умножение матириц : ', a.umn(b).data)
