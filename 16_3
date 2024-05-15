@@ -1,0 +1,60 @@
+"""Создайте класс «Матрица», который имеет атрибуты количества строк и столбцов.
+Добавьте методы для сложения, вычитания и умножения матриц."""
+
+import random
+import pickle
+
+
+class Matrix:
+    def __init__(self, rows, cols):
+        self.rows = rows
+        self.cols = cols
+        self.data = [[random.randint(1, 10) for _ in range(cols)] for _ in range(rows)]
+
+    def __add__(self, other):
+        result = Matrix(self.rows, self.cols)
+        for i in range(self.rows):
+            for j in range(self.cols):
+                result.data[i][j] = self.data[i][j] + other.data[i][j]
+        return result
+
+    def __sub__(self, other):
+        result = Matrix(self.rows, self.cols)
+        for i in range(self.rows):
+            for j in range(self.cols):
+                result.data[i][j] = self.data[i][j] - other.data[i][j]
+        return result
+
+    def __mul__(self, other):
+        result = Matrix(self.rows, self.cols)
+        for i in range(self.rows):
+            for j in range(self.cols):
+                result.data[i][j] = self.data[i][j] * other.data[i][j]
+        return result
+
+    def __str__(self):
+        return str(self.data)
+
+
+def save_def(nameFile):
+    with open(nameFile, "wb") as f:
+        pickle.dump(f)
+
+def load_def( nameFile):
+    with open(nameFile, "rb") as f:
+            inform = pickle.load(f)
+    return inform
+
+a = Matrix(2, 3)
+print(a)
+
+b = Matrix(2, 3)
+print(b)
+
+print('сложение матириц : ', a + b)
+print('вычитание матириц : ', a - b)
+print('умножение матириц : ', a * b)
+
+a.save_def('text')
+a.load_def('text')
+c = inform
