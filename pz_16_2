@@ -1,35 +1,32 @@
 class Transport:
-    def __init__(self, max_speed, wheels,weight):
+    def __init__(self, max_speed, wheels, weight, max_people_on_ts,engine_size):
         self.max_speed = max_speed
         self.wheels = wheels
         self.weight = weight
+        self.max_people_on_ts = max_people_on_ts
+        self.engine_size = engine_size
 
-    def description(self):
-        return f"У этого ТС максимальная скорость = {self.max_speed} км/ч, транспорт имеет {self.wheels} колес, его вес составляет{self.weight} кг "
+    def info(self):
+        return f"У этого ТС максимальная скорость = {self.max_speed} км/ч, транспорт имеет {self.wheels} колеса, его вес составляет  { self.weight} кг " \
+               f"он может перевезти максимум {self.max_people_on_ts} человек, обьем его двигателя равен {self.engine_size} куб"
 
 
 class Car(Transport):
-    def __init__(self, max_speed, wheels, doors):
-        super().__init__(max_speed, wheels)
-        self.doors = doors
+    def __init__(self, max_speed , weight, engine_size):
+        super().__init__(max_speed, 4, weight, 5, engine_size)
 
-    def description(self):
-        return super().description() + f" It's a car with {self.doors} doors."
 
 
 class Motorcycle(Transport):
-    def __init__(self, max_speed, wheels, engine_size):
-        super().__init__(max_speed, wheels)
-        self.engine_size = engine_size
+    def __init__(self, max_speed, weight, engine_size):
+        super().__init__(max_speed, 2, weight, 4, engine_size)
 
-    def description(self):
-        return super().description() + f" It's a motorcycle with an engine size of {self.engine_size}cc."
 
 
 # Создание экземпляров классов
-car = Car(250, 4, 4)
-motorcycle = Motorcycle(180, 2, 600)
+car = Car(250, 750, 650)
+moto = Motorcycle(320, 150, 300)
 
 # Вывод описания транспортных средств
-print(car.description())
-print(motorcycle.description())
+print(car.info())
+print(moto.info())
