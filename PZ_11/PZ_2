@@ -1,0 +1,18 @@
+# Из предложенного текстового файла (text18-7.txt) вывести на экран его содержимое,
+# количество букв в нижнем регистре. Сформировать новый файл, в который поместить текст
+# в стихотворной форме предварительно поставив последнюю строку между второй и
+# третьей.
+
+with open('text18-7.txt', 'r') as file:
+    content = file.read()
+    print(content)
+
+    lowercase_letters = sum(1 for char in content if char.islower())
+    print(f"Количество букв в нижнем регистре: {lowercase_letters}")
+
+    lines = content.split('\n')
+    new_lines = [lines[0], lines[-1]] + lines[1:-1]
+
+    with open('../new_file.txt', 'w') as new_file:
+        new_file.write('\n'.join(new_lines))
+
